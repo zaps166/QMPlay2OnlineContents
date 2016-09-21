@@ -1,4 +1,4 @@
 [General]
-Version=16.09.04
+Version=16.09.21
 Win32="https://github.com/zaps166/QMPlay2/releases/download/$Version/QMPlay2-Win32-$Version.exe"
 Win64="https://github.com/zaps166/QMPlay2/releases/download/$Version/QMPlay2-Win64-$Version.exe"
