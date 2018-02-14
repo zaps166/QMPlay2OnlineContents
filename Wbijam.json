@@ -1,0 +1,22 @@
+[
+	{
+		"Name": "google",
+		"Priority": 0
+	},
+	{
+		"Name": "-gd-",
+		"Priority": 0
+	},
+	{
+		"Name": "vk",
+		"Priority": 1
+	},
+	{
+		"Name": "cda",
+		"Priority": 1
+	},
+	{
+		"Name": "sibnet",
+		"Priority": 1
+	}
+]
