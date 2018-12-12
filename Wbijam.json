@@ -13,10 +13,10 @@
 	},
 	{
 		"Name": "cda",
-		"Priority": 3
+		"Priority": 2
 	},
 	{
 		"Name": "sibnet",
-		"Priority": 2
+		"Priority": 3
 	}
 ]
