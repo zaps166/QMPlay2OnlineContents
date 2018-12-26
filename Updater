@@ -1,4 +1,5 @@
 [General]
 Version=18.07.03
+WinNew32="https://github.com/zaps166/QMPlay2/releases/download/$Version/QMPlay2-Win32-$Version.exe"
 Win32="https://github.com/zaps166/QMPlay2/releases/download/$Version/QMPlay2-Win32-$Version.exe"
 Win64="https://github.com/zaps166/QMPlay2/releases/download/$Version/QMPlay2-Win64-$Version.exe"
