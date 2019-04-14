@@ -1,0 +1,12 @@
+[
+    {
+        "Name": "MyFreeMP3",
+        "Path": "MediaBrowser/040-MyFreeMP3.js",
+        "Version": 1
+    },
+    {
+        "Name": "AnimeOdcinki",
+        "Path": "MediaBrowser/050-AnimeOdcinki.js",
+        "Version": 1
+    }
+]
