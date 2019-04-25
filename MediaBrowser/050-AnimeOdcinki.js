@@ -13,7 +13,7 @@ var g_treeW = null
 function getInfo()
 {
     return {
-        version: 1,
+        version: 2,
         name: g_name,
         icon: ":/video.svgz",
     }
@@ -287,10 +287,13 @@ function getEmbeddedPlayers(data)
                 var idx = name.indexOf(" ")
                 if (idx > -1)
                     name = name.substr(0, name.indexOf(" "))
-                if (name == "google")
-                    ret.unshift(json)
-                else
-                    ret.push(json)
+                if (name != "sibnet")
+                {
+                    if (name == "google")
+                        ret.unshift(json)
+                    else
+                        ret.push(json)
+                }
             }
         }
 

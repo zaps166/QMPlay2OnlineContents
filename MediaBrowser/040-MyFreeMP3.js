@@ -5,6 +5,7 @@ var g_headers = [
     self.network().urlEncoded(),
     "Referer: " + g_baseUrl + "mp3juices",
 ]
+var g_queryId = "jQuery000000000000000000000_0000000000000"
 
 var g_urlNames = []
 var g_treeW = null
@@ -14,7 +15,7 @@ var g_treeW = null
 function getInfo()
 {
     return {
-        version: 1,
+        version: 2,
         name: g_name,
         icon: ":/applications-multimedia.svgz",
     }
@@ -48,16 +49,14 @@ function getQMPlay2Url(text)
 function getSearchReply(text, page)
 {
     return self.network().start({
-        url: g_url + "/search.php?callback=",
+        url: g_url + "/search.php?callback=" + g_queryId,
         post: "q=" + encodeURI(text) + "&page=" + (page - 1),
         headers: g_headers,
     })
 }
 function addSearchResults(reply)
 {
-    var replyOffset = ((reply[0] == "(") ? 1 : 0)
-    var replyLength = reply.length - replyOffset - ((reply.substr(reply.length - 2, 2) == ");") ? 2 : 0)
-    var jsonArray = JSON.parse(reply.substr(replyOffset, replyLength)).response
+    var jsonArray = JSON.parse(reply.substr(g_queryId.length + 1, reply.length - 2 - g_queryId.length - 1)).response
     if (jsonArray == null)
         return {}
 
