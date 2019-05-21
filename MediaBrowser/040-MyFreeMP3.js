@@ -3,9 +3,10 @@ var g_url = g_baseUrl + "api"
 var g_name = "MyFreeMP3"
 var g_headers = [
     self.network().urlEncoded(),
-    "Referer: " + g_baseUrl + "mp3juices",
+    "Referer: " + g_baseUrl + "mp3juice",
 ]
 var g_queryId = "jQuery000000000000000000000_0000000000000"
+var g_cookies = null
 
 var g_urlNames = []
 var g_treeW = null
@@ -15,7 +16,7 @@ var g_treeW = null
 function getInfo()
 {
     return {
-        version: 2,
+        version: 3,
         name: g_name,
         icon: ":/applications-multimedia.svgz",
     }
@@ -23,6 +24,14 @@ function getInfo()
 
 function prepareWidget(treeW)
 {
+    if (g_cookies == null)
+    {
+        var network = common.newNetworkAccess(engine)
+        network.start(g_baseUrl, function(error, data, cookies) {
+            g_cookies = cookies
+        });
+    }
+
     treeW.sortByColumn(0, SortOrder.AscendingOrder)
 
     treeW.setHeaderItemText(0, "Title")
@@ -48,10 +57,12 @@ function getQMPlay2Url(text)
 
 function getSearchReply(text, page)
 {
+    var headers = g_headers
+    headers.push("Cookie: " + g_cookies + " musicLang=en")
     return self.network().start({
         url: g_url + "/search.php?callback=" + g_queryId,
         post: "q=" + encodeURI(text) + "&page=" + (page - 1),
-        headers: g_headers,
+        headers: headers,
     })
 }
 function addSearchResults(reply)
