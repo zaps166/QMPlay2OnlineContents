@@ -16,7 +16,7 @@ var g_treeW = null
 function getInfo()
 {
     return {
-        version: 3,
+        version: 4,
         name: g_name,
         icon: ":/applications-multimedia.svgz",
     }
@@ -161,8 +161,10 @@ function hasAction()
 
 function convertAddress(prefix, url, param, nameAvail, extensionAvail, ioCtrl)
 {
+    var fullUrl = "https://s.playx.fun/stream/" + url
+    common.addRawHeaders(fullUrl, "Referer: " + g_baseUrl + "mp3juice")
     return {
-        url: "https://playx.fun/stream/" + url,
+        url: fullUrl,
         name: "",
         extension: extensionAvail ? ".mp3" : "",
     }
