@@ -2,11 +2,13 @@
     {
         "Name": "MyFreeMP3",
         "Path": "MediaBrowser/040-MyFreeMP3.js",
-        "Version": 5
+        "Version": 5,
+        "ApiVersion": 1
     },
     {
         "Name": "AnimeOdcinki",
         "Path": "MediaBrowser/050-AnimeOdcinki.js",
-        "Version": 2
+        "Version": 2,
+        "ApiVersion": 1
     }
 ]
