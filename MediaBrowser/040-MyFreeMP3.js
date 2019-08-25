@@ -16,7 +16,7 @@ var g_treeW = null
 function getInfo()
 {
     return {
-        version: 4,
+        version: 5,
         name: g_name,
         icon: ":/applications-multimedia.svgz",
     }
@@ -138,7 +138,7 @@ function getCompleterReply(text)
 function getCompletions(reply)
 {
     var completions = []
-    if (reply != "")
+    try
     {
         var jsonArray = JSON.parse(reply)
         for (var i = 0; i < jsonArray.length; ++i)
@@ -147,6 +147,9 @@ function getCompletions(reply)
             if (name && name != "")
                 completions.push(name)
         }
+    }
+    catch (e)
+    {
     }
     return completions
 }
