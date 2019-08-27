@@ -3,7 +3,7 @@ var g_url = g_baseUrl + "api"
 var g_name = "MyFreeMP3"
 var g_headers = [
     self.network().urlEncoded(),
-    "Referer: " + g_baseUrl + "mp3juice",
+    "Referer: " + g_baseUrl,
 ]
 var g_queryId = "jQuery000000000000000000000_0000000000000"
 var g_cookies = null
@@ -16,7 +16,7 @@ var g_treeW = null
 function getInfo()
 {
     return {
-        version: 5,
+        version: 6,
         name: g_name,
         icon: ":/applications-multimedia.svgz",
     }
@@ -165,7 +165,7 @@ function hasAction()
 function convertAddress(prefix, url, param, nameAvail, extensionAvail, ioCtrl)
 {
     var fullUrl = "https://s.playx.fun/stream/" + url
-    common.addRawHeaders(fullUrl, "Referer: " + g_baseUrl + "mp3juice")
+    common.addRawHeaders(fullUrl, "Referer: " + g_baseUrl)
     return {
         url: fullUrl,
         name: "",
