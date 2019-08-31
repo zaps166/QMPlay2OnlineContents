@@ -85,6 +85,16 @@
 		"Icon": ""
 	},
 	{
+		"Name": "1.FM - Country One Radio",
+		"Url": "http://strm112.1.fm/ccountry_mobile_mp3",
+		"Icon": ""
+	},
+	{
+		"Name": "Digital impulse - Country",
+		"Url": "http://5.39.71.159:8110/stream",
+		"Icon": ""
+	},
+	{
 		"Name": "Polskie Radio",
 		"Url": "",
 		"Icon": ""
