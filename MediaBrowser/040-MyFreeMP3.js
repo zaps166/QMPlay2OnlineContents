@@ -1,12 +1,10 @@
-var g_baseUrl = "https://my-free-mp3s.com/"
+var g_baseUrl = "https://myfreemp3c.com/"
 var g_url = g_baseUrl + "api"
 var g_name = "MyFreeMP3"
 var g_headers = [
     self.network().urlEncoded(),
     "Referer: " + g_baseUrl,
 ]
-var g_queryId = "jQuery000000000000000000000_0000000000000"
-var g_cookies = null
 
 var g_urlNames = []
 var g_treeW = null
@@ -16,7 +14,7 @@ var g_treeW = null
 function getInfo()
 {
     return {
-        version: 6,
+        version: 7,
         name: g_name,
         icon: ":/applications-multimedia.svgz",
     }
@@ -24,14 +22,6 @@ function getInfo()
 
 function prepareWidget(treeW)
 {
-    if (g_cookies == null)
-    {
-        var network = common.newNetworkAccess(engine)
-        network.start(g_baseUrl, function(error, data, cookies) {
-            g_cookies = cookies
-        });
-    }
-
     treeW.sortByColumn(0, SortOrder.AscendingOrder)
 
     treeW.setHeaderItemText(0, "Title")
@@ -57,17 +47,15 @@ function getQMPlay2Url(text)
 
 function getSearchReply(text, page)
 {
-    var headers = g_headers
-    headers.push("Cookie: " + g_cookies + " musicLang=en")
     return self.network().start({
-        url: g_url + "/search.php?callback=" + g_queryId,
+        url: g_url + "/search.php",
         post: "q=" + encodeURI(text) + "&page=" + (page - 1),
-        headers: headers,
+        headers: g_headers,
     })
 }
 function addSearchResults(reply)
 {
-    var jsonArray = JSON.parse(reply.substr(g_queryId.length + 1, reply.length - 2 - g_queryId.length - 1)).response
+    var jsonArray = JSON.parse(reply.substr(1, reply.length - 2 - 1)).response
     if (jsonArray == null)
         return {}
 
@@ -164,8 +152,7 @@ function hasAction()
 
 function convertAddress(prefix, url, param, nameAvail, extensionAvail, ioCtrl)
 {
-    var fullUrl = "https://s.playx.fun/stream/" + url
-    common.addRawHeaders(fullUrl, "Referer: " + g_baseUrl)
+    var fullUrl = "https://s.mp3-send.com/stream/" + url
     return {
         url: fullUrl,
         name: "",
