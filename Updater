@@ -1,9 +1,9 @@
 [General]
-Version=19.11.26
+Version=19.12.04
 
-VersionWin32=19.11.26
-VersionWinNew32=19.11.26
-VersionWin64=19.11.26
+VersionWin32=19.12.04
+VersionWinNew32=19.12.04
+VersionWin64=19.12.04
 
 Win32="https://github.com/zaps166/QMPlay2/releases/download/$Version/QMPlay2-Win32-$Version.exe"
 WinNew32="https://github.com/zaps166/QMPlay2/releases/download/$Version/QMPlay2-Win32-$Version.exe"
