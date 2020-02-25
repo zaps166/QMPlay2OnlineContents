@@ -14,7 +14,7 @@ var g_treeW = null
 function getInfo()
 {
     return {
-        version: 7,
+        version: 8,
         name: g_name,
         icon: ":/applications-multimedia.svgz",
     }
@@ -152,7 +152,7 @@ function hasAction()
 
 function convertAddress(prefix, url, param, nameAvail, extensionAvail, ioCtrl)
 {
-    var fullUrl = "https://s.mp3-send.com/stream/" + url
+    var fullUrl = "https://s.mp3-music-downloads.com/" + url
     return {
         url: fullUrl,
         name: "",
