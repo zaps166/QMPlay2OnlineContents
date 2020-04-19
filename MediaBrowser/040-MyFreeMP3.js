@@ -1,4 +1,4 @@
-var g_baseUrl = "https://myfreemp3c.com/"
+var g_baseUrl = "https://myfreemp3.best/"
 var g_url = g_baseUrl + "api"
 var g_name = "MyFreeMP3"
 var g_headers = [
@@ -14,7 +14,7 @@ var g_treeW = null
 function getInfo()
 {
     return {
-        version: 8,
+        version: 9,
         name: g_name,
         icon: ":/applications-multimedia.svgz",
     }
