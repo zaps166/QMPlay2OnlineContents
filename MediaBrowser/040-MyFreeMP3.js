@@ -14,7 +14,7 @@ var g_treeW = null
 function getInfo()
 {
     return {
-        version: 11,
+        version: 12,
         name: g_name,
         icon: ":/applications-multimedia.svgz",
     }
@@ -48,14 +48,14 @@ function getQMPlay2Url(text)
 function getSearchReply(text, page)
 {
     return self.network().start({
-        url: g_url + "/search.php",
+        url: g_url + "/search.php?callback=jQuery000000000000000000000_0000000000000",
         post: "q=" + encodeURI(text) + "&page=" + (page - 1),
         headers: g_headers,
     })
 }
 function addSearchResults(reply)
 {
-    var jsonArray = JSON.parse(reply.substr(1, reply.length - 2 - 1)).response
+    var jsonArray = JSON.parse(reply.substr(42, reply.length - 2 - 42)).response
     if (jsonArray == null)
         return {}
 
