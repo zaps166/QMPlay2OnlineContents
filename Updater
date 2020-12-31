@@ -5,6 +5,6 @@ VersionWin32=20.12.16
 VersionWinNew32=20.12.16
 VersionWin64=20.12.16
 
-Win32="https://github.com/zaps166/QMPlay2/releases/download/$Version/QMPlay2-Win32-$Version.exe"
+Win32="https://github.com/zaps166/QMPlay2/releases/download/$Version/QMPlay2-Win32-$Version-nojs.exe"
 WinNew32="https://github.com/zaps166/QMPlay2/releases/download/$Version/QMPlay2-Win32-$Version.exe"
 Win64="https://github.com/zaps166/QMPlay2/releases/download/$Version/QMPlay2-Win64-$Version.exe"
