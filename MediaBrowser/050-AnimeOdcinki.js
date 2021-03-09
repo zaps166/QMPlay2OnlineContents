@@ -1,7 +1,7 @@
 var g_url = "https://anime-odcinki.pl/anime/"
 var g_name = "AnimeOdcinki"
 
-var g_network = common.newNetworkAccess(engine)
+var g_network = new NetworkAccess()
 var g_animeListReplyId = 0
 var g_animeList = []
 var g_currentAnime = ""
@@ -13,7 +13,7 @@ var g_treeW = null
 function getInfo()
 {
     return {
-        version: 2,
+        version: 3,
         name: g_name,
         icon: ":/video.svgz",
     }
@@ -62,7 +62,7 @@ function addSearchResults(reply)
     {
         var urlSuffix = g_currentAnime + "/" + animeList[i].suffix
 
-        var tWI = common.newQTreeWidgetItem(engine)
+        var tWI = new QTreeWidgetItem()
         tWI.setData(0, ItemDataRole.UserRole, urlSuffix)
         tWI.setText(0, animeList[i].title)
         g_treeW.addTopLevelItem(tWI)
@@ -137,7 +137,7 @@ function convertAddress(prefix, url, param, nameAvail, extensionAvail, ioCtrl)
     var streamUrl = ""
     var extension = ""
 
-    var net = common.newNetworkAccess(engine)
+    var net = new NetworkAccess()
     net.setMaxDownloadSize(0x200000 /* 2 MiB */)
 
     var result = net.startAndWait(url, ioCtrl)

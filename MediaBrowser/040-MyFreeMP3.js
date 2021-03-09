@@ -14,7 +14,7 @@ var g_treeW = null
 function getInfo()
 {
     return {
-        version: 13,
+        version: 14,
         name: g_name,
         icon: ":/applications-multimedia.svgz",
     }
@@ -71,7 +71,7 @@ function addSearchResults(reply)
         var artist = entry.artist
         var fullName = artist + " - " + title
 
-        var tWI = common.newQTreeWidgetItem(engine)
+        var tWI = new QTreeWidgetItem()
         tWI.setData(0, ItemDataRole.UserRole + 1, fullName)
         tWI.setData(0, ItemDataRole.UserRole, id)
 
