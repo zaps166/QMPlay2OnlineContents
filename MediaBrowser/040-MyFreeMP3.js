@@ -1,4 +1,4 @@
-var g_baseUrl = "https://myfreemp3music.com/"
+var g_baseUrl = "https://myfreemp3juices.cc/"
 var g_url = g_baseUrl + "api"
 var g_name = "MyFreeMP3"
 var g_headers = [
@@ -14,7 +14,7 @@ var g_treeW = null
 function getInfo()
 {
     return {
-        version: 15,
+        version: 16,
         name: g_name,
         icon: ":/applications-multimedia.svgz",
     }
@@ -55,7 +55,7 @@ function getSearchReply(text, page)
 }
 function addSearchResults(reply)
 {
-    var jsonArray = JSON.parse(reply.substr(42, reply.length - 2 - 42)).response
+    var jsonArray = JSON.parse(reply.substr(42, reply.lastIndexOf("}") - 42 + 1)).response
     if (jsonArray == null)
         return {}
 
