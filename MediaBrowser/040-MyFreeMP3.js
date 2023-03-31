@@ -14,7 +14,7 @@ var g_treeW = null
 function getInfo()
 {
     return {
-        version: 16,
+        version: 17,
         name: g_name,
         icon: ":/applications-multimedia.svgz",
     }
@@ -48,7 +48,7 @@ function getQMPlay2Url(text)
 function getSearchReply(text, page)
 {
     return self.network().start({
-        url: g_url + "/search.php?callback=jQuery000000000000000000000_0000000000000",
+        url: g_url + "/api_search.php?callback=jQuery000000000000000000000_0000000000000",
         post: "q=" + encodeURI(text) + "&page=" + (page - 1),
         headers: g_headers,
     })
@@ -113,32 +113,15 @@ function getWebpageUrl(text)
 
 function completerMode()
 {
-    return CompleterMode.Continuous
+    return CompleterMode.None
 }
 function getCompleterReply(text)
 {
-    return self.network().start({
-        url: g_url + "/autocomplete.php",
-        post: "query=" + encodeURI(text),
-        headers: g_headers,
-    })
+    return 0
 }
 function getCompletions(reply)
 {
     var completions = []
-    try
-    {
-        var jsonArray = JSON.parse(reply)
-        for (var i = 0; i < jsonArray.length; ++i)
-        {
-            var name = jsonArray[i].name
-            if (name && name != "")
-                completions.push(name)
-        }
-    }
-    catch (e)
-    {
-    }
     return completions
 }
 function completerListCallbackSet()
