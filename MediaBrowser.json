@@ -7,7 +7,6 @@
     },
     {
         "Name": "AnimeOdcinki",
-        "Path": "MediaBrowser/050-AnimeOdcinki.js",
         "Version": 3,
         "ApiVersion": 1
     }
