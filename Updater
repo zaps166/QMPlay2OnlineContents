@@ -1,9 +1,9 @@
 [General]
-Version=23.06.17
+Version=23.08.08
 
 VersionWin32=20.12.16
-VersionWinNew32=23.06.17
-VersionWin64=23.06.17
+VersionWinNew32=23.08.08
+VersionWin64=23.08.08
 
 Win32="https://github.com/zaps166/QMPlay2/releases/download/$Version/QMPlay2-Win32-$Version-nojs.exe"
 WinNew32="https://github.com/zaps166/QMPlay2/releases/download/$Version/QMPlay2-Win32-$Version.exe"
