@@ -1,4 +1,4 @@
-var g_baseUrl = "https://new.myfreemp3juices.cc/"
+var g_baseUrl = "https://2024.myfreemp3juices.cc/"
 var g_url = g_baseUrl + "api"
 var g_name = "MyFreeMP3"
 var g_headers = [
@@ -14,7 +14,7 @@ var g_treeW = null
 function getInfo()
 {
     return {
-        version: 18,
+        version: 19,
         name: g_name,
         icon: ":/applications-multimedia.svgz",
     }
@@ -135,7 +135,7 @@ function hasAction()
 
 function convertAddress(prefix, url, param, nameAvail, extensionAvail, ioCtrl)
 {
-    var fullUrl = "https://play.idmp3s.com/stream/" + url
+    var fullUrl = "https://nplay.idmp3s.xyz/stream/" + url
     return {
         url: fullUrl,
         name: "",
