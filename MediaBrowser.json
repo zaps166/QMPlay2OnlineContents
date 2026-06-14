@@ -2,8 +2,8 @@
     {
         "Name": "MyFreeMP3",
         "Path": "MediaBrowser/040-MyFreeMP3.js",
-        "Version": 19,
-        "ApiVersion": 1
+        "Version": 20,
+        "ApiVersion": 2
     },
     {
         "Name": "AnimeOdcinki",
