@@ -9,4 +9,4 @@ VersionWin10_64=26.06.27
 Win32="https://github.com/zaps166/QMPlay2/releases/download/$Version/QMPlay2-Win32-$Version-nojs.exe"
 WinNew32="https://github.com/zaps166/QMPlay2/releases/download/$Version/QMPlay2-Win32-$Version-qt5.exe"
 Win64="https://github.com/zaps166/QMPlay2/releases/download/$Version/QMPlay2-Win64-$Version-qt5.exe"
-Win10_64="https://github.com/zaps166/QMPlay2/releases/download/$Version/QMPlay2-Win64-$Version.exe"
+Win10_64="https://github.com/zaps166/QMPlay2/releases/download/$Version/QMPlay2-Win64-$Version-v2.exe"
