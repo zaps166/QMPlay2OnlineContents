@@ -46,7 +46,7 @@ function isBootstrapExpired()
 function getInfo()
 {
     return {
-        version: 20,
+        version: 21,
         name: g_name,
         icon: ":/applications-multimedia.svgz",
     }
@@ -303,7 +303,11 @@ function convertAddress(prefix, url, param, nameAvail, extensionAvail, ioCtrl)
     if (!g_bootstrapDone)
         return { url: "", name: "", extension: "" }
 
+    if (url.startsWith("http://"))
+        url = url.replace("http://", "")
+
     var data = JSON.parse(common.base64Decode(url))
+
     var artist = data.a
     var title = data.t
     var trackId = data.id
@@ -320,7 +324,7 @@ function convertAddress(prefix, url, param, nameAvail, extensionAvail, ioCtrl)
     {
         var hlsUrl = extractHlsUrl(result.reply, trackId)
         if (hlsUrl)
-            return { url: hlsUrl, name: "", extension: extensionAvail ? ".m3u8" : "" }
+            return { url: hlsUrl, name: artist + " - " + title, extension: extensionAvail ? ".m3u8" : "" }
     }
 
     return { url: "", name: "", extension: "" }
